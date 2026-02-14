@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.1.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;У меня есть вопрос...&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        .container { text-align: center; }
+        img { width: 250px; border-radius: 15px; margin-bottom: 20px; }
+        h1 { color: #d32f2f; transition: 0.3s; }
+        .buttons { display: flex; gap: 20px; justify-content: center; align-items: center; }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #4caf50; color: white; }
+        #noBtn { background-color: #f44336; color: white; position: relative; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class=&quot;container&quot; id=&quot;mainContent&quot;&gt;
+        &lt;img id=&quot;imageDisplay&quot; src=&quot;https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZ1JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/ISOckXUybVfQ4/giphy.gif&quot; alt=&quot;Sad Minion&quot;&gt;
+        &lt;h1 id=&quot;question&quot;&gt;Ты будешь моим Валентином?&lt;/h1&gt;
+        &lt;div class=&quot;buttons&quot;&gt;
+            &lt;button id=&quot;yesBtn&quot; onclick=&quot;celebrate()&quot;&gt;Да&lt;/button&gt;
+            &lt;button id=&quot;noBtn&quot; onmouseover=&quot;moveButton()&quot; onclick=&quot;moveButton()&quot;&gt;Нет&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        let yesSize = 18;
+        let noClicks = 0;
+        const phrases = [&quot;Ты уверена?&quot;, &quot;Подумай еще раз!&quot;, &quot;Правда-правда?&quot;, &quot;Я буду плакать...&quot;, &quot;Ну пожалуйста!&quot;, &quot;А если так?&quot;, &quot;Я сейчас обижусь!&quot;];
+
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+            const question = document.getElementById('question');
+            
+            // 1. Увеличиваем кнопку &quot;Да&quot;
+            yesSize += 30;
+            yesBtn.style.fontSize = yesSize + 'px';
+            yesBtn.style.padding = (yesSize/2) + 'px ' + yesSize + 'px';
+
+            // 2. Меняем текст вопроса и кнопки &quot;Нет&quot;
+            if (noClicks &lt; phrases.length) {
+                noBtn.innerText = phrases[noClicks];
+            } else {
+                noBtn.innerText = &quot;Без шансов...&quot;;
+            }
+            noClicks++;
+        }
+
+        function celebrate() {
+            const content = document.getElementById('mainContent');
+            content.innerHTML = `
+                &lt;img src=&quot;https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXJueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZ1JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/TdfyKrN7HGTIY/giphy.gif&quot;&gt;
+                &lt;h1 style=&quot;font-size: 50px;&quot;&gt;УРАААААА! ❤️&lt;/h1&gt;
+            `;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</body>
+</html>
