@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопрос для тебя</title>
+    <style>
+        body { text-align: center; font-family: sans-serif; background: #fdf6e3; padding-top: 50px; }
+        img { width: 200px; border-radius: 10px; }
+        .buttons { margin-top: 20px; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+        #yesBtn { background: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        #noBtn { background: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; position: relative; }
+    </style>
+</head>
+<body>
+    <img src="minion.jpg" alt="Миньон">
+    <h2>Будешь моим Валентином?</h2>
+    
+    <div class="buttons">
+        <button id="yesBtn" onclick="celebrate()">Да</button>
+        <button id="noBtn" onmouseover="moveButton()">Нет</button>
+    </div>
+
+    <script>
+        let yesSize = 16;
+        function moveButton() {
+            // Кнопка "Нет" убегает или кнопка "Да" растет
+            const noBtn = document.getElementById('noBtn');
+            const yesBtn = document.getElementById('yesBtn');
+            
+            // Увеличиваем кнопку "Да"
+            yesSize += 20;
+            yesBtn.style.fontSize = yesSize + 'px';
+            yesBtn.style.padding = (yesSize/2) + 'px ' + yesSize + 'px';
+            
+            // Меняем текст на кнопке "Нет"
+            const messages = ["Ты уверена?", "Подумай еще раз!", "Правда?", "Ну пожалуйста!"];
+            noBtn.innerText = messages[Math.floor(Math.random() * messages.length)];
+        }
+
+        function celebrate() {
+            document.body.innerHTML = "<h1>УРААААА! ❤️</h1><img src='fireworks.gif'>";
+        }
+    </script>
+</body>
+</html>
